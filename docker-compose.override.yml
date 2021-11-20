@@ -18,13 +18,13 @@ services:
 
   discountdb:
     container_name: discountdb
-    environment: 
+    environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=Admin@70
       - POSTGRES_DB=DiscountDB
     restart: always
     ports:
-      - "5431:5432"
+      - "5432:5432"
     volumes: 
       - postgres_data:/var/lib/postgresql/data
 
@@ -35,6 +35,8 @@ services:
      - PGADMIN_DEFAULT_EMAIL=admin@site.com
      - PGADMIN_DEFAULT_PASSWORD=Admin@70
     restart: always
+    depends_on:
+     - discountdb
     ports:
       - "5050:80"
     volumes:
@@ -65,8 +67,22 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - CacheSettings:ConnectionString=basketdb:6379
+      - "GrpcSettings:DiscountUrl=discount.grpc"
     depends_on:
       - basketdb
     ports:
       - "8001:80"
+
+
+  discount.grpc:
+    container_name: discount.grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=Server=localhost;Port=5431;Database=DiscountDb;User Id=admin;Password=Admin@70;"
+    depends_on:
+      - discountdb
+
+    ports:
+      - "8003:80"
+   
 
