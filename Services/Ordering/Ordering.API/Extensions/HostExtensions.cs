@@ -29,7 +29,7 @@ namespace Ordering.API.Extensions
                     InvokeSeeder(seeder,context,services);
                     logger.LogInformation("Migrated OrderDatabase.");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
                     throw;
