@@ -9,6 +9,10 @@ services:
 
   discountdb:
     image: postgres
+  
+  orderdb:
+    image: docker pull mcr.microsoft.com/mssql/server
+
 
   pgadmin:
     image: dpage/pgadmin4
