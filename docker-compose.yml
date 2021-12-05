@@ -11,8 +11,11 @@ services:
     image: postgres
   
   orderdb:
-    image: docker pull mcr.microsoft.com/mssql/server
+    image: mcr.microsoft.com/mssql/server
 
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
 
   pgadmin:
     image: dpage/pgadmin4

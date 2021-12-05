@@ -29,6 +29,14 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 
+
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
   orderdb:
     container_name: orderdb
     environment:
