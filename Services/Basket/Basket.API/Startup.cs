@@ -42,6 +42,7 @@ namespace Basket.API
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
                 (c => c.Address = new Uri(Configuration.GetValue<string>("GrpcSettings:DiscountUrl")));
             services.AddScoped<DiscountGrpcService>();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddMassTransit(config =>
             {

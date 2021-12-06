@@ -35,7 +35,6 @@ namespace Discount.Grpc
             }
 
             app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<DiscountService>();

@@ -31,17 +31,17 @@ namespace Discount.Grpc.Extensions
                     command.CommandText = @"CREATE TABLE Coupon (
                                                          Id SERIAL PRIMARY KEY,
                                                          ProductName VARCHAR(24) NOT NULL,
-                                                         Description TXT,
+                                                         Description TEXT,
                                                          Amount INT)";
                     command.ExecuteNonQuery();
 
 
                     command.CommandText = @"INSERT INTO Coupon(ProductName,Description,Amount) 
-                                                        VALUES ('Iphone X','Iphone Inc',100)";
+                                                        VALUES ('IPhone X', 'IPhone Discount', 150)";
                     command.ExecuteNonQuery();
 
                     command.CommandText = @"INSERT INTO Coupon(ProductName,Description,Amount) 
-                                                        VALUES ('Samsung 10','Samsung Inc',100)";
+                                                        VALUES ('Samsung 10', 'Samsung Discount', 100)";
 
                     command.ExecuteNonQuery();
 

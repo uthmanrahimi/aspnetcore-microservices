@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{FD11DF2D-BFB1-4820-B0E0-C562422FE828}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Service\Catalog\Catalog.API\Catalog.API.csproj", "{85C2A58C-E5ED-40F0-A665-E21372356C13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{85C2A58C-E5ED-40F0-A665-E21372356C13}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3C6DC3F4-1C31-442C-95FE-5B1115B2D07A}"
 EndProject
