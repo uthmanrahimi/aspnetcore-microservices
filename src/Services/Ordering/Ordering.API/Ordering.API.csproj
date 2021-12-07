@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="7.3.0-develop.317" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.0-develop.317" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="7.3.0-develop.317" />
+    
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
