@@ -50,6 +50,8 @@ namespace Ordering.API
             });
             services.AddMassTransitHostedService();
 
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<BasketCheckOutConsumer>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
