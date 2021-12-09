@@ -22,6 +22,12 @@ namespace OcelotApiGateway
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            .ConfigureLogging((context, builder) =>
+            {
+                builder.AddConfiguration(context.Configuration.GetSection("Logging"));
+                builder.AddConsole();
+                builder.AddDebug();
+            });
     }
 }
