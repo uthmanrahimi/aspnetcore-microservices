@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Content Update="Ocelot - Copy.Local.json">
-      <DependentUpon>Ocelot.Local.json</DependentUpon>
+      <DependentUpon>ocelot.Local.json</DependentUpon>
     </Content>
   </ItemGroup>
 

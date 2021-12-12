@@ -20,7 +20,7 @@ namespace OcelotApiGateway
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((host,builder)=> {
-                builder.AddJsonFile($"ocelot.{host.HostingEnvironment.EnvironmentName}.json");
+                builder.AddJsonFile($"ocelot.{host.HostingEnvironment.EnvironmentName}.json", true, true);
             })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
