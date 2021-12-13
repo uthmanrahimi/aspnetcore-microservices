@@ -47,8 +47,6 @@ namespace Basket.API.Controllers
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> UpdateBasket([FromBody] ShoppingCart basket)
         {
-            //connect to grpc server 
-            //update price if has coupon
 
             foreach (var item in basket.Items)
             {
