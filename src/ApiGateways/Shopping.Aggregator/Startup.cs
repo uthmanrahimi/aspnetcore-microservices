@@ -33,7 +33,7 @@ namespace Shopping.Aggregator
             
             services.AddHttpClient<ICatalogService, CatalogService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:CatalogUrl"]); });
             services.AddHttpClient<IBasketService, BasketService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:BasketUrl"]); });
-            services.AddHttpClient<IOrderService, OrderService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:OrderUrl"]); });
+            services.AddHttpClient<IOrderService, OrderService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:OrderingUrl"]); });
 
             services.AddSwaggerGen(c =>
             {

@@ -28,6 +28,7 @@ namespace Shopping.Aggregator.Controllers
         }
 
         [ProducesResponseType(typeof(ShoppingModel), (int)HttpStatusCode.OK)]
+        [HttpGet("{userName}", Name = "GetShopping")]
         public async Task<ActionResult<ShoppingModel>> GetShopping(string userName)
         {
             var basket = await _basketService.GetBasket(userName);
