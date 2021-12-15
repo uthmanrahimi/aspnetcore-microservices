@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+using Shopping.Aggregator.Services;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,13 +30,17 @@ namespace Shopping.Aggregator
         {
 
             services.AddControllers();
+            
+            services.AddHttpClient<ICatalogService, CatalogService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:CatalogUrl"]); });
+            services.AddHttpClient<IBasketService, BasketService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:BasketUrl"]); });
+            services.AddHttpClient<IOrderService, OrderService>(x => { x.BaseAddress = new Uri(Configuration["ApiSettings:OrderUrl"]); });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shopping.Aggregator", Version = "v1" });
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
